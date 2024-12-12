@@ -48,7 +48,7 @@ app.use(rateLimit);
 // 4. SMS Notification Middleware (if using external SMS service like Twilio)
 app.use(notification);
 
-app.use(sessionMiddleware);
+// app.use(sessionMiddleware);
 
 // Routes Setup
 app.use('/api/auth', authRoutes);        // Authentication Routes
