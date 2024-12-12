@@ -36,13 +36,17 @@ Ensure you have the following installed on your system:
 3. Configure environment variables:
    Create a `.env` file in the root directory and add the following:
    ```env
-   PORT=5000
-   MONGO_URI=<your-mongodb-connection-string>
-   REDIS_URI=<your-redis-connection-string>
-   PAYPAL_CLIENT_ID=<your-paypal-client-id>
-   PAYPAL_SECRET=<your-paypal-secret>
-   SMS_API_KEY=<your-sms-api-key>
-   NODE_ENV=development
+PORT=5060
+MONGO_URI=mongodb://localhost:27017/travel_booking
+JWT_SECRET=travel_booking
+PAYPAL_CLIENT_ID=AR7xnrOGLIhy6LXC4YIcYWIQDgelwZUCNOmq1L4UbqHwkMDPWVIncj1t1OPLWhfiGsphoDJpBtN1flVP
+PAYPAL_CLIENT_SECRET=ENnKb2zFruliNKZMVqylNUD4fUeA0RHD4fhEIYx8FhoZZYazX3qgQvRW78lENasS561yGratyw4iQKzM
+TWILIO_ACCOUNT_SID=AC2928161bf3bfa0e70ad149b06d9e2fe0
+TWILIO_AUTH_TOKEN=ffd3a7c37a26c763b2787c5d9b22ea19
+TWILIO_PHONE_NUMBER=+12292354905
+REDIS_HOST=127.0.0.1
+REDIS_PORT=6379
+
    ```
 
 4. Set up MongoDB:
