@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const rateLimit = require('./middleware/rateLimit');
 const { sendSmsNotification } = require('./middleware/notification');
+const sessionMiddleware = require('./middleware/sessionMiddleware')
 const authRoutes = require('./routes/authRoutes');
 const flightRoutes = require('./routes/flightRoutes');
 const hotelRoutes = require('./routes/hotelRoutes');
@@ -28,7 +29,6 @@ const redis = require('./config/redis');
 // PayPal Configuration (Optional, if you are integrating PayPal API)
 const paypalConfig = require('./config/paypal');
 const notification = require('./middleware/notification');
-
 // Middleware setup
 
 // 1. CORS Middleware
@@ -47,6 +47,8 @@ app.use(rateLimit);
 
 // 4. SMS Notification Middleware (if using external SMS service like Twilio)
 app.use(notification);
+
+app.use(sessionMiddleware);
 
 // Routes Setup
 app.use('/api/auth', authRoutes);        // Authentication Routes

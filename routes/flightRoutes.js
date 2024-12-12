@@ -15,6 +15,15 @@ const router = express.Router();
 // });
 
 
+const cacheMiddleware = require('../middleware/cache');
+const Flight = require('../models/Flight');
+
+
+
+router.get('/:id', cacheMiddleware);
+
+
+
 
 router.post('/create', protect, isAdmin, (req, res) => {
     const { user } = req; // Access the logged-in user's info

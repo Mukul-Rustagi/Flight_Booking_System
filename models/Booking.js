@@ -13,7 +13,8 @@ const BookingSchema = new mongoose.Schema({
 },
   flight: { 
     type: mongoose.Schema.Types.ObjectId, 
-    ref: 'Flight', required: true 
+    ref: 'Flight'
+    // required: true 
 },
   totalAmount: { 
     type: Number, 
